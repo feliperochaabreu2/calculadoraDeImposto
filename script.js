@@ -102,3 +102,4 @@ document.addEventListener('DOMContentLoaded', async function () {
     const exchangeRate = await getExchangeRate();
     exchangeRateTodayElement.innerText = `Cotação do Dólar do Dia: R$ ${exchangeRate.toFixed(2)}`;
 });
+
