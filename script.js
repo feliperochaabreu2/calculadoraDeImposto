@@ -85,3 +85,20 @@ document.getElementById('taxForm').addEventListener('submit', function (e) {
     `;
 });
 
+async function getExchangeRate() {
+    try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const data = await response.json();
+        return data.rates.BRL;
+    } catch (error) {
+        console.error('Erro ao obter taxa de câmbio:', error);
+        return 5; // Valor default em caso de erro
+    }
+}
+
+// Obter e exibir a cotação do dólar do dia
+document.addEventListener('DOMContentLoaded', async function () {
+    const exchangeRateTodayElement = document.getElementById('exchangeRateToday');
+    const exchangeRate = await getExchangeRate();
+    exchangeRateTodayElement.innerText = `Cotação do Dólar do Dia: R$ ${exchangeRate.toFixed(2)}`;
+});
