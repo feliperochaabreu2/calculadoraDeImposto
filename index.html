@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Impostos e Descontos</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #555;
+      }
+      .title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .title-container img {
+        margin-right: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1>Calculadora de Impostos, Descontos e Conversão</h1>
+      <div class="title-container">
+        <img
+          src="calculator.png"
+          alt="Calculator Icon"
+          width="50"
+          height="50"
+        />
+        <h1>Calculadora de Impostos, Descontos e Conversão</h1>
+      </div>
       <form id="taxForm">
         <label for="purchaseAmount">Valor da Compra (em dólares):</label>
         <input type="number" id="purchaseAmount" required />
@@ -43,6 +67,7 @@
       </form>
       <div id="result"></div>
     </div>
+    <div class="footer">Página desenvolvida por Felipe Rocha</div>
     <script src="script.js"></script>
   </body>
 </html>
